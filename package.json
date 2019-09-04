@@ -7,6 +7,8 @@
     "dev": "node ./server/main.js",
     "build": "next build",
     "start": "next start",
+    "deploy": "bash ./deploy/deploy.sh",
+    "export": "npm run build && next export",
     "lint": "npm run lint-pages && npm run lint-components && npm run lint-store && npm run lint-server && npm run lint-lib",
     "lint-pages": "eslint pages/* --cache --fix",
     "lint-components": "eslint components/* --cache --fix",

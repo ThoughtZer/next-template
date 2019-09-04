@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import actionCreators from '../store/action-creator';
-import css from '../style/demo.less';
 
 const Detail = ({
   typeOne,
@@ -13,7 +12,7 @@ const Detail = ({
   return (
     <div>
       这是模拟使用redux同步前后端数据页面
-      <p className={css.example}>{typeOne}</p>
+      <p className="css.example">{typeOne}</p>
       <p>{ typeTwo }</p>
       <p>{ typeThree }</p>
       <button
@@ -37,6 +36,8 @@ Detail.getInitialProps = async (ctx) => {
   await reduxStore.dispatch(
     await actionCreators.asyncUpdateActionThree(105),
   );
+
+  return {};
 };
 
 const mapStateToProps = (state) => ({

@@ -21,7 +21,6 @@ module.exports = {
     "indent": [2, 2],
     "react/jsx-indent": [2, 2],
     "react/react-in-jsx-scope": "off",
-    "no-console": 2,
     "no-extra-semi": 0,
     "semi": ['error', 'always'],
     "quotes": ['error', 'single'],
@@ -36,6 +35,7 @@ module.exports = {
     "react/jsx-props-no-spreading": [0],
     "no-console": [0],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": "warn"
   }
 };

@@ -4,7 +4,10 @@ const withCss = require('@zeit/next-css');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 
+const prod = process.env.NODE_ENV === 'production';
+
 module.exports = withLess(withCss({
+  distDir: prod ? 'build' : '.next',
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 2,

@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import actionCreators from '../store/action-creator';
 
 const Count = ({
-  typeThree,
+  typeOne,
 }) => {
   return (
     <>
       这是组件从store中获取的数据
-      { typeThree }
+      { typeOne }
     </>
   );
 };
@@ -21,7 +21,7 @@ Count.getInitialProps = async (ctx) => {
 };
 
 const mapStateToProps = (state) => ({
-  typeThree: state.typeThree,
+  typeOne: state.typeOne,
 });
 
 export default connect(mapStateToProps, null)(Count);

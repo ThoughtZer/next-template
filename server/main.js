@@ -19,7 +19,7 @@ app.prepare().then(() => {
     ctx.respond = false;
   });
 
-  server.listen(3000, () => {
-    console.log('koa server listen on port 3000');
+  server.listen(9999, () => {
+    console.log('koa server listen on port 9999');
   });
 });

@@ -12,3 +12,17 @@ export const EventButton = styled.button`
   color: ${PrimaryColor};
   border: 1px solid red;
 `;
+
+export const MyHeader = styled.header`
+  font-size: 20px;
+  color: rgba(0, 0, 0, .1);
+  line-height: 30px;
+  background-image: url("${(props) => props.imgSrc}");
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+`;
+
+MyHeader.defaultProps = {
+  imgSrc: '',
+};
