@@ -33,9 +33,14 @@ module.exports = {
     "no-param-reassign": [0],
     "react/prop-types": [0],
     "react/jsx-props-no-spreading": [0],
-    "no-console": [0],
+    "no-console": process.env.LINT_ENV === "prod" ? ["error", { allow: ["warn", "error"] }] : "off",
+    "no-debugger": process.env.LINT_ENV === "prod" ? "error" : "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/no-extraneous-dependencies": "warn"
+    "import/no-extraneous-dependencies": "warn",
+    "import/order": [2],
+    "import/prefer-default-export": [0],
+    "import/no-unresolved": [0],
+    "jsx-a11y/media-has-caption": "off",
   }
 };

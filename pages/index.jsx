@@ -19,8 +19,8 @@ const Home = () => {
         <title>这是首页标题</title>
       </Head>
       <Count />
-      <div className="css.title">这个是开发的内容</div>
-      <Link href="/redux-example?id=123" prefetch={false}>
+      <div>1233213</div>
+      <Link href="/redux-example?id=123">
         <a>去 redux-example</a>
       </Link>
       <span className="fengexian" onMouseEnter={handleMouseEnter}> 鼠标放置显示下面内容 </span>

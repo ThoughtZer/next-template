@@ -15,7 +15,8 @@
     "lint-store": "eslint store/* --cache --fix",
     "lint-server": "eslint server/* --cache --fix",
     "lint-lib": "eslint lib/* --cache --fix",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "imagemin": "node ./server/imagemin.js"
   },
   "lint-staged": {
     "**/*.js": "eslint --ext .js",
@@ -27,6 +28,8 @@
     "koa": "^2.8.1",
     "koa-router": "^7.4.0",
     "next": "9.0.5",
+    "next-images": "^1.2.0",
+    "next-seo": "^2.1.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-redux": "^7.1.1",
@@ -38,6 +41,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "chalk": "^2.4.2",
+    "cross-env": "^5.2.1",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-standard": "^14.1.0",
@@ -49,7 +53,11 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
     "eslint-plugin-standard": "^4.0.1",
+    "glob": "^7.1.4",
     "husky": "^3.0.5",
+    "imagemin": "^7.0.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.2.5",
@@ -58,7 +66,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
+      "pre-commit": "cross-env LINT_ENV=prod npm run lint-staged"
     }
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "not ie < 11"
+  ]
 }

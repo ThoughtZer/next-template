@@ -1,20 +1,12 @@
 const path = require('path');
-const withLess = require('@zeit/next-less');
 const withCss = require('@zeit/next-css');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
+const WithImages = require('next-images');
 
-const prod = process.env.NODE_ENV === 'production';
-
-module.exports = withLess(withCss({
-  distDir: prod ? 'build' : '.next',
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 2,
-    localIdentName: '[local]___[hash:base64:5]',
-  },
-  postcssLoaderOptions: {
-    parser: true,
+module.exports = WithImages(withCss({
+  generateBuildId: async () => {
+    return 'v1.0.0';
   },
   webpack(config) {
     // 编译进度展示
@@ -22,6 +14,11 @@ module.exports = withLess(withCss({
       format: `build [:bar]${chalk.green.bold(':percent')} (:elapsed seconds)`,
       clear: false,
     }));
+
+    config.resolve.alias['@/components'] = path.join(__dirname, './components');
+    config.resolve.alias['@/lib'] = path.join(__dirname, './lib');
+    config.resolve.alias['@/store'] = path.join(__dirname, './store');
+    config.resolve.alias['@/styled-components'] = path.join(__dirname, './styled-components');
 
     // eslint 校验 loader
     const eslintRule = {

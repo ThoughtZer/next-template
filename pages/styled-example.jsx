@@ -3,22 +3,16 @@ import Link from 'next/link';
 import {
   Title as MyTitle,
   EventButton,
-  MyHeader,
 } from '../styled-components/styled-example';
 
 const StyledComponent = () => {
   return (
     <div>
-      <span>标题</span>
-      <EventButton>
-        <MyTitle>这是标题按钮</MyTitle>
-      </EventButton>
-      <MyHeader imgSrc="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />
-      <MyHeader />
+      <MyTitle>标题</MyTitle>
       <Link href="/">
-        <button type="button">
+        <EventButton type="button">
           点击按钮尝试跳转首页
-        </button>
+        </EventButton>
       </Link>
     </div>
   );

@@ -12,7 +12,7 @@ const Detail = ({
   return (
     <div>
       这是模拟使用redux同步前后端数据页面
-      <p className="css.example">{typeOne}</p>
+      <p>{typeOne}</p>
       <p>{ typeTwo }</p>
       <p>{ typeThree }</p>
       <button

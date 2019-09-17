@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import GlobalStyle from '../styled-components/global-css';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -30,7 +31,10 @@ class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
-        <Head />
+        <Head>
+          <link rel="icon" type="image/x-icon" href="../static/favicon.ico" />
+          <GlobalStyle />
+        </Head>
         <body>
           <Main />
           <NextScript />
