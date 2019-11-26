@@ -1,4 +1,4 @@
-#### NextJs
+#### NextJs 模板
 
 ### 项目约定
 
@@ -18,13 +18,6 @@
 - [styled-components](https://github.com/styled-components/styled-components)
 - 需要使用pm2部署
 - [next-seo](https://github.com/garmeeh/next-seo#title-template)
-
-
-#### 笔记
-
-- next start 是运行的经过 next build 构建的文件夹的内容
-
-- nextJs自带预加载功能，在Link prefetch属性控制，如果不希望预加载就设为false
 
 #### 笔记
 
@@ -49,3 +42,5 @@ demo 时发现的问题，不知道如何解决，但是知道如何避免
 - 编写propTypes时注意开头小写！
 
 - 如果使用ant-design，官方会解决由于react更新带来的生命周期方法更新造成的警告⚠,[issue](https://github.com/ant-design/ant-design/issues/9792) ️
+
+- getInitialProps 方法中获取数据不能简单的直接使用 api 路由，需要使用完整的接口地址，服务端渲染才会获取到数据，  但是前端渲染的话直接这样做就会跨域，所以需要判断下是否是服务端渲染加上请求的baseURL。[详情可见](https://github.com/zeit/next.js/issues/5009)

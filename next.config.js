@@ -1,8 +1,13 @@
+/* eslint-disable */
 const path = require('path');
 const withCss = require('@zeit/next-css');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const chalk = require('chalk');
 const WithImages = require('next-images');
+
+if (typeof require !== 'undefined') {
+  require.extensions['.css'] = (file) => {}
+}
 
 module.exports = WithImages(withCss({
   generateBuildId: async () => {
@@ -32,4 +37,6 @@ module.exports = WithImages(withCss({
     config.module.rules.push(eslintRule);
     return config;
   },
+  publicRuntimeConfig: {
+  }
 }));
